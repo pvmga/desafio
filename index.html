@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>LOGIN</title>
+</head>
+<body>
+    <section id="formulario">
+        <form action="#" method="post" name="cadastro" onsubmit="return validaForm(this);">
+            <div class="bordaForm">
+                <fieldset>
+                    <label for="usuario">Usuário</label>
+                    <input type="text" required placeholder="Digite o seu usuario..." class="txt" id="usuario" name="usuario" value="">
+                    
+                    <label for="senha">Senha</label>
+                    <input type="password" class="txt" id="senha" name="senha" value="">
+        
+                </fieldset> 
+                <div class="edicao-btn">
+                    <input type="submit" onclick="validaUser()" name="enviarDados" id="enviarDados" value="ENTRAR">
+                </div> 
+            </div>
+        </form>
+    </section>
+
+    <script>
+
+        function validaForm() {
+            return false;
+        }
+        function validaUser() {
+            let usuario = document.querySelector('#usuario').value;
+            let senha = document.querySelector('#senha').value;
+
+            usuarioValida = 'sistema';
+            senhaValida = '123';
+
+            if (usuario == usuarioValida && senha == senhaValida) {
+                alert('Efetuar login');
+                window.location.href = 'page.html';
+            } else {
+                alert('Você não tem permissão para acessar a aplicação');
+            }
+
+        }
+    </script>
+</body>
+</html>
