@@ -9,7 +9,7 @@
 </head>
 <body>
     <section id="formulario">
-        <form action="#" method="post" name="cadastro" onsubmit="return validaForm(this);">
+        <form action="#" method="post" name="cadastro" >
             <div class="bordaForm">
                 <fieldset>
                     <label for="usuario">Usuário</label>
@@ -20,7 +20,7 @@
         
                 </fieldset> 
                 <div class="edicao-btn">
-                    <input type="submit" onclick="validaUser()" name="enviarDados" id="enviarDados" value="ENTRAR">
+                    <input type="submit" name="enviarDados" id="enviarDados" value="ENTRAR">
                 </div> 
             </div>
         </form>
@@ -28,10 +28,12 @@
 
     <script>
 
-        function validaForm() {
-            return false;
-        }
-        function validaUser() {
+        const btn = document.querySelector("#enviarDados");
+
+        btn.addEventListener("click", function(e) {
+            
+            e.preventDefault();
+            
             let usuario = document.querySelector('#usuario').value;
             let senha = document.querySelector('#senha').value;
 
@@ -45,7 +47,8 @@
                 alert('Você não tem permissão para acessar a aplicação');
             }
 
-        }
+        });
+
     </script>
 </body>
 </html>
