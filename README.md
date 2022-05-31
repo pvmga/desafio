@@ -8,3 +8,4 @@
 3. Tela de produto construida.
 4. Tela pedido construida.
 5. Finalizado.
+6. Ajuste alinhamento formulario pedido.
