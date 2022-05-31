@@ -25,11 +25,11 @@
         </section>
 
         <section class="alinhamento" id="clientes" style="margin-left: -185px;" hidden="hidden">
-            <form action="#" method="post" name="cadastro" >
+            <form action="#" method="post" name="cadastro" id="formClientes" >
                 <div class="bordaForm">
                     <div class="flex direction">
                         <h1 class="">Clientes</h1>
-                        <h2 style="margin-left: 76%; cursor: pointer;" onclick="fecharFormCliente();">x</h1>
+                        <h2 style="margin-left: 76%; cursor: pointer; color: red;" onclick="fecharFormCliente();">x</h1>
                     </div>
                     <fieldset class="flex" style="flex-direction: column;">
                         <input type="number" id="index" value="" hidden="hidden">
@@ -56,11 +56,11 @@
         </section>
 
         <section class="alinhamento" id="produtos" style="margin-left: -185px;" hidden="hidden">
-            <form action="#" method="post" name="cadastro" >
+            <form action="#" method="post" name="cadastro" id="formProdutos" >
                 <div class="bordaForm">
                     <div class="flex direction">
                         <h1 class="">Produtos</h1>
-                        <h2 style="margin-left: 76%; cursor: pointer;" onclick="fecharFormProduto();">x</h1>
+                        <h2 style="margin-left: 76%; cursor: pointer; color: red;" onclick="fecharFormProduto();">x</h1>
                     </div>
                     <fieldset class="flex" style="flex-direction: column;">
                         <input type="number" id="indexProduto" value="" hidden="hidden">
@@ -91,13 +91,61 @@
                 </div>
             </form>
         </section>
-        <section class="alinhamento" id="pedidos" hidden="hidden">
-            <h1>pedidos</h1>
+
+        <section class="alinhamento " id="pedidos" style="margin-left: -300px;">
+            <form class="bordaForm" action="#" method="post" name="cadastro" id="formPedidos" style="padding: 10px;">
+                <div class="" style="margin-bottom: 10px;">
+                    <div class="flex direction">
+                        <h1 class="">Pedidos</h1>
+                        <h2 style="margin-left: 76%; cursor: pointer; color: red;" onclick="fecharFormPedido();">x</h1>
+                    </div>
+                    <fieldset class="flex" style="flex-direction: column;">
+                                                
+                        <label for="codigoPedido">Código do Cliente</label>
+                        <input type="number"  placeholder="" class="txt" id="codigoClientePedido" name="codigoPedido" value="" onchange="buscarClientePreencherPedido();">
+                        
+                        <label for="descricaoPedido">Cliente</label>
+                        <input type="text"  placeholder="" class="txt" id="nomeClientePedido" name="nomeClientePedido" value="" disabled>
+                                                
+                    </fieldset> 
+                    <div class="edicao-btn" style="width: 100%; margin-top: 5px;">
+                        <h4 style="color: blueviolet; border-top: 2px solid #ecf0f1;">Localizar produto</h4>
+                        <div class="flex" style="justify-content: flex-start; margin-top: 5px; height: 35px;">
+                            <input type="text" name="codigoProdutoPedidoLanc" class="" id="codigoProdutoPedidoLanc" value="" style="margin-right: 5px; width: 10%; font-size: 18px;" onchange="buscarProdutoPreencherPedido();">
+                            <input type="text" name="descricaoProdutoPedidoLanc" class=""  id="descricaoProdutoPedidoLanc" value="" style="margin-right: 5px; width: 40%; font-size: 18px;" disabled>
+                            <input type="text" name="precoProdutoPedidoLanc" class=""  id="precoProdutoPedidoLanc" value="" style="margin-right: 5px; width: 10%; font-size: 18px;" disabled>
+                            <input type="number" name="quantidadeASerAdicionada" class="" id="quantidadeASerAdicionada" value="" style="margin-right: 5px; width: 10%; font-size: 18px;">
+                            <input type="text" id="quantidadeRealProduto" value="" hidden>
+                            <input type="submit" name="adicionarProdutoPedido" class="" id="adicionarProdutoPedido" value="SALVAR" style="width: 30%;">
+                        </div>
+                        <h4 style="color: blueviolet; border-top: 2px solid #ecf0f1; margin-top: 5px;">Itens do Pedido</h4>
+                    </div> 
+                </div>
+
+                <table>
+                    <tbody >
+                        <thead>
+                            <th style="width: 10%;">Item</th>
+                            <th style="width: 50%;">Descrição</th>
+                            <th style="width: 10%;">Preço</th>
+                            <th style="width: 10%;">Qtd</th>
+                            <th style="width: 20%;">Sub Total</th>
+                        </thead>
+                        <tbody id="listaProdutos">
+                        </tbody>
+                    </tbody>
+                </table>
+
+                <div class="flex" style="margin-top: 40px; font-size: 12px; justify-content: flex-end; color: blueviolet;">
+                    <h1 >R$ <span id="totalPedido">0</span></h1>
+                </div>
+            </form>
         </section>
     </main>
 
     <script src="./js/home.js"></script>
     <script src="./js/clientes.js"></script>
     <script src="./js/produtos.js"></script>
+    <script src="./js/pedidos.js"></script>
 </body>
 </html>

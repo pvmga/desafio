@@ -6,3 +6,5 @@
 1. Ajustado tela de login validação para respeitar json.
 2. Tela de cliente construida.
 3. Tela de produto construida.
+4. Tela pedido construida.
+5. Finalizado.

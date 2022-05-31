@@ -120,8 +120,21 @@ section.alinhamento h1 {
     width: 20%;
 }
 
-form {
+/* form {
     width: 70%;
+    height: auto;
+    padding: 2px;
+} */
+
+#formClientes,
+#formProdutos {
+    width: 70%;
+    height: auto;
+    padding: 2px;
+}
+
+#formPedidos {
+    width: 80%;
     height: auto;
     padding: 2px;
 }
@@ -210,4 +223,14 @@ div.edicao-btn .esquerda, div.edicao-btn .direita {
     background-color: var(--cor-btn-padrao);
     color: #fff;
     box-shadow: 2px 2px 10px var(--cor-btn-padrao-hover);
+}
+
+table, th, td {
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-collapse: collapse;
+    /* padding: 5px; */
+    /* margin: 0 auto; */
 }
