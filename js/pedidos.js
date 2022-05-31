@@ -84,3 +84,10 @@ adicionarProdutoPedido.addEventListener("click", function(e) {
     }
 
 });
+
+
+function fecharFormPedido() {
+
+    let div1 = document.getElementById("pedidos");
+    div1.setAttribute("hidden", "hidden");
+}
